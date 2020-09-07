@@ -1,0 +1,6 @@
+{% for product in product %}
+    <h3>{{ product.title }} - {{product.kiosk.currency}}{{product.selling_price}}</h3>
+    <p> {{ product.description }} </p>
+{% endfor %}
+
+
