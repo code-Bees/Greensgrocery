@@ -23,14 +23,19 @@
 <div class="col-lg-3">
 <img src="{{product.product_image.url}}"> 
 
-    <h3>{{ product.title }} - {{product.kiosk.currency}} {{product.selling_price}}</h3>
-    <p> {{ product.description }} </p></div>
+   <p> <a href="/products/{{product.id}}/" >{{ product.title }}</a> - {{product.kiosk.currency}} {{product.selling_price}}</p>
+    <p> {{ product.description }} </p>
+    </div>
 {% endfor %}
 
 </div>
-<styles>
-
-</styles>
+<style>
+h1{
+    background-color:green;
+    text-align:center;
+}
+}
+</style>
   </body>
 </html>
 
