@@ -1,7 +1,10 @@
 <!doctype html>
+{%load static %} 
 <html lang="en">
   <head>
+<link rel="stylesheet" href="{% static 'css/kiosk.css' %}"> 
     <meta charset="utf-8">
+   <link https://fonts.google.com/specimen/Grenze+Gotisch#standard-styles>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -9,6 +12,27 @@
     <title>Codebees</title>
   </head>
   <body>
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+<div class="carousel-inner"> 
+  <div class="carousel-item active"> 
+      <img class="d-block w-100" src="https://mottsfresh.wpengine.com/wp-content/uploads/2016/03/Apples864x573.jpg" alt="apples",width='150px',height='150px'>
+    </div>
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="https://dam.farmjournal.com/m/1cb2b6bdf76cfdff/original/onions-reds-jpg.jpg" alt="onions",width='150px',height='150px'>
+    </div>
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="https://images-na.ssl-images-amazon.com/images/I/41WVSdCpo%2BL.jpg" alt="spinach",width='150px',height='150px'>
+    </div>
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="https://www.topserveltd.co.ke/image/cache/catalog/iStock_000012529377Small_(strawberry)__95536-800x600.jpg" alt="strawberry", width='150px',height='150px'>
+    </div>
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="https://www.thegrowthop.com/wp-content/uploads/2019/02/GettyImages-484472040-e1549992026214.jpg" alt="mangoes", width='150px',height='150px'>
+    </div>
+
+  </div>
+</div>
+
   <div class="container-fluid">
     <h1>Welcome to GreensKiosk</h1>
     </div>
@@ -20,8 +44,8 @@
 <div class="row">
 
 {% for product in product %}
-<div class="col-lg-3">
-<img src="{{product.product_image.url}}"> 
+<div class="col-lg-4">
+<img src="{{product.product_image.url}}"width='300px' height='250px'> 
 
    <p> <a href="/products/{{product.id}}/" >{{ product.title }}</a> - {{product.kiosk.currency}} {{product.selling_price}}</p>
     <p> {{ product.description }} </p>
@@ -30,8 +54,12 @@
 
 </div>
 <style>
+body{
+   font-family: "Kalam cursive";
+   background-color:beige;
+}
 h1{
-    background-color:green;
+color:green;
     text-align:center;
 }
 }

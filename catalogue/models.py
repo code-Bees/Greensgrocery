@@ -1,3 +1,4 @@
+#import pdb; pdb.set_trace()
 from django.db import models
 from django.contrib.auth.models import User
 from kiosks.models import Kiosk
@@ -16,7 +17,7 @@ class ProductSupplier(models.Model):
         return self.street_address
 
 class ProductCategory(models.Model):
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=25)
     description = models.TextField()
     icon = models.ImageField()
 
@@ -24,7 +25,7 @@ class ProductCategory(models.Model):
         return self.name
 
 class Product(models.Model):
-    title = models.CharField(max_length=50)
+    title = models.CharField(max_length=20)
     category = models.ForeignKey(ProductCategory, on_delete=models.CASCADE)
     description = models.TextField()
     supplier_price = models.DecimalField(max_digits=6, decimal_places=2)
