@@ -1,7 +1,6 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect, get_object_or_404
 from .models import Product
 from .forms import ProductForm
-
  
 # Create your views here.
 def product_list(request ):
@@ -23,11 +22,9 @@ def upload_product(request):
     else:
        form = ProductForm
        return render (request,'upload_product.html',{'form':form})
-        
 
-    
-    
-   
+
+
     
     
    

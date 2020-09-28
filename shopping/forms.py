@@ -1,16 +1,5 @@
 from django import forms
 from .models import Cart
-from django import forms
-
-STATES = (
-    ('', 'Choose...'),
-    ('MG', 'Minas Gerais'),
-    ('SP', 'Sao Paulo'),
-    ('RJ', 'Rio de Janeiro')
-)
-
-
-
 
 class CartForm(forms.ModelForm):
     class Meta:
@@ -25,4 +14,9 @@ class CartForm(forms.ModelForm):
         
          }
 
-       
+
+
+PRODUCT_QUANTITY_CHOICES = [(i, str(i)) for i in range(1, 26)]
+class CartAddProductForm(forms.Form):
+    quantity = forms.TypedChoiceField(choices=PRODUCT_QUANTITY_CHOICES, coerce=int)
+    update = forms.BooleanField(required=False, initial=False, widget=forms.HiddenInput)
