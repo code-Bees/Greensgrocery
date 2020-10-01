@@ -1,4 +1,4 @@
- {% extends 'catalogue/product_list.html' %} 
+ {% comment %} {% extends 'catalogue/product_list.html' %} 
 {% load static %}
 {% block title %}
 {%if category%}{{category.name}}{%else%}Product{%endif%}
@@ -106,4 +106,4 @@
     </div>
 {% endblock %}
 
-
+ {% endcomment %}

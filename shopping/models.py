@@ -42,4 +42,7 @@ class Payment(models.Model):
     def __str__(self):
         return self.customer.get_full_name()
 
+class cart_item(models.Model):
+    Product=models.ForeignKey(Product,on_delete=models.CASCADE),
+    
 

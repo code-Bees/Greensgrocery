@@ -1,30 +1,9 @@
-{% comment %} <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> {% endcomment %}
-
-    {% comment %} <title>Codebees</title> {% endcomment %}
-  {% comment %} </head>
-  <body> {% endcomment %}
-  {% comment %} <div class="container-fluid"> {% endcomment %}
-    {% comment %} <h1>View your Basket</h1> {% endcomment %}
-    {% comment %} </div> {% endcomment %}
-]
-{% comment %} <div class="row"> {% endcomment %}
-
-{% comment %} {% for product in product %}
-{% comment %} <div class="col-lg-3"> {% endcomment %}
-{% comment %} <img src="{{product.product_image.url}}"> 
-
-   <p>"/products/{{product.id}}/" >{{ product.title }} - {{product.kiosk.currency}} {{product.selling_price}}</p>
-    <p> {{ product.description }} </p>
-    </div>
-{% endfor %}
-{% comment %} 
-</div> {% endcomment %} 
-
-  {% comment %} </body>
-</html> {% endcomment %}
+ {%load static %} 
+<h2>View your cart</h2>
+    <form method="POST" class="post-form">
+    <img src= "/products/{{product.id}}/" "{{product.product_image.url}}"width='300px' height='250px'> 
+    
+    {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-secondary">Add to Cart</button>
+    </form> 
