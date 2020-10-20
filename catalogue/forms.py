@@ -16,10 +16,10 @@ class ProductForm(forms.ModelForm):
                'description':forms.TextInput(attrs={'class':'form-control'}),
                'supplier_price':forms.TextInput(attrs={'class':'form-control'}),
                'supplier':forms.TextInput(attrs={'class':'form-control'}),
-               'selling_price':forms.TextInput(attrs={'class':'form-control',}),
-               'number_in_stock':forms.TextInput(attrs={'class':'form-control',}),
+               'selling_price':forms.TextInput(attrs={'class':'form-control'}),
+               'number_in_stock':forms.TextInput(attrs={'class':'form-control'}),
                'kiosk':forms.TextInput(attrs={'class':'form-control'}),
-               'product_image':forms.TextInput(attrs={'class':'form-control'}),
+               'product_image':forms.FileInput(attrs={'class':'form-control'}),
 
 
             }

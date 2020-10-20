@@ -3,16 +3,19 @@ from django.views.decorators.http import require_POST
 from .models import Product
 from .forms import CartForm
 from .models import Cart
-from .forms import CartAddProductForm
+from .forms import QuantityForm
 
 # Create your views here.
 def upload_basket(request,product_id):
     product=Product.objects.filter(id=product_id) 
     return render(request,'Upload_basket.html',{'product':product})
 
-def cart_item(requesr, product_id):
-    product=Product.objects.filter(id=product_id) 
-    return render(request,'Upload_basket.html',{'product':product})
+def cart_details(request,product_id):
+    product=Product.objects.filter(id=product_id)
+    return render(request,'cart_details.html',{'product':product})
+
+
+
    
 
 # def show_basket(request):

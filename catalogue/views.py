@@ -9,7 +9,7 @@ def product_list(request ):
 
 def details(request,product_id):
     product=Product.objects.filter(id=product_id) 
-    return render(request,'details.html', {'product':product,})
+    return render(request,'details.html', {'product':product})
 
 def upload_product(request):
     if request.method == 'POST':

@@ -1,17 +1,21 @@
- {%load static %} 
+{%load static %} 
+<html>
+<head>
 <link rel="stylesheet" href="{% static 'kiosk.css' %}"> 
-<h2>View your cart</h2>
-    {% comment %} <form method="POST" class="post-form">
-    <img src= "{{product.product_image.url}}"width='300px' height='250px'> 
-    
-    {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="save btn btn-secondary">Add to Cart</button>
-    </form> {% endcomment %}
+</head>
+<body>
+
+<h2>Continue shopping</h2>
+
+    {% comment %} <form method="POST" class="post-form"> {% endcomment %}
+   
 {% for product in product %}
     <img src= "{{product.product_image.url}}"width='300px' height='250px'> {{ product.title }} {{product.kiosk.currency}} {{product.selling_price}}
-     <a href="{% url 'upload-basket' product.id%}"><button class="save btn btn-primary">Add to cart</button></a>
+     <a href="{% url 'cart-details' product.id%}"><button class="save btn btn-primary">Add to cart</button></a>
  {% csrf_token %}
     {% load crispy_forms_tags %} 
     {{form.as_p}}
     {% endfor %}
+    </body>
+    </html>
+    
